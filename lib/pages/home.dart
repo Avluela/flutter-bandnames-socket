@@ -167,6 +167,10 @@ class _HomePageState extends State<HomePage> {
       dataMap.putIfAbsent(band.name, () => band.votes.toDouble());
     }
 
+    if (dataMap.isEmpty) {
+      return const SizedBox(height: 0, width: 0);
+    }
+
     final List<Color> colorList = [
       Colors.red.shade100,
       Colors.blue.shade300,
